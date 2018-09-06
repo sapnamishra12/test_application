@@ -1,0 +1,34 @@
+<%= form_with(model: item_tax, local: true) do |form| %>
+  <% if item_tax.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item_tax.errors.count, "error") %> prohibited this item_tax from being saved:</h2>
+
+      <ul>
+        <% item_tax.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.label :item %>
+    <%= form.grouped_collection_select :item_id, ItemCategory.order(:name), :items, :name, :id, :name, {include_blank: false, :class => "form-control itemSelect"} %>
+    <br>
+
+    <%= form.label :tax_type %>
+    <% if params[:action] == "new" || params[:action] == "create" %>
+      <%= form.select :tax_type, options_for_select(ItemTax.tax_types.map{|i| [i[0].upcase, i[1]] }), {:include_blank => "Please Select"}, {:class => "form-control taxSelect"} %>
+    <% else %>
+      <%= form.select :tax_type, options_for_select([["Percentage", "1"], ["Value", "2"]], ItemTax.tax_types[@item_tax.tax_type]), {:include_blank => "Please Select "}, {:class => "form-control taxSelect"} %>
+    <% end %>
+    <br>
+
+    <%= form.label :tax %>
+    <%= form.text_field :tax %>
+    <br>
+    <br>
+
+    <%= form.submit "Save Item Tax" %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<h3>Item Tax Details</h3>
+<label>Item :  <%= @item_tax.item.name %> </label>
+<label>Tax Type :  <%= @item_tax.tax_type %> </label>
+<label>Tax :  <%= @item_tax.tax %> </label>
+<%= link_to 'Edit', edit_item_tax_path(@item_tax) %> |
+<%= link_to 'Destroy', @item_tax, method: :delete %> |
+<%= link_to 'Back', item_taxes_path %>

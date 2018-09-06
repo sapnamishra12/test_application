@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<h3>Category Details</h3>
+<label>Name :  <%= @item_category.name %> </label>
+<%= link_to 'Edit', edit_item_category_path(@item_category) %> |
+<%= link_to 'Destroy', @item_category, method: :delete %> |
+<%= link_to 'Back', item_categories_path %>

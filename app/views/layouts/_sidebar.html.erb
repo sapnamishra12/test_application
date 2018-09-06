@@ -1,0 +1,26 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+			<li class="<%= active_class(item_categories_path) %>">  
+				<a href="<%= item_categories_path %>">
+				  <span><%= "All Categories" %></span>
+				</a>
+			</li>
+			<li class="<%= active_class(items_path) %>">  
+				<a href="<%= items_path %>">
+				  <span><%= "All Items" %></span>
+				</a>
+			</li>
+			<li class="<%= active_class(item_taxes_path) %>">  
+				<a href="<%= item_taxes_path %>">
+				  <span><%= "All Item Taxes" %></span>
+				</a>
+			</li>
+			<li class="<%= active_class(get_items_item_categories_path) %>">  
+				<a href="<%= get_items_item_categories_path %>">
+				  <span><%= "Categories Items" %></span>
+				</a>
+			</li>
+    </ul>
+  </section>
+</aside>

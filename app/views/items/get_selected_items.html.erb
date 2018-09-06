@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Sub Total</th>
+      <th>Tax</th>
+      <th>Total Amount</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.item_name %></td>
+        <td><%= item.rate %></td>
+        <td><%= item.tax %></td>
+        <td><%= get_total_amount(item.tax_type,item.tax,item.rate) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

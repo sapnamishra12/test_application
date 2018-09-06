@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Item Details</h3>
+<label>Category :  <%= @item.item_category.name %> </label>
+<label>Name :  <%= @item.name %> </label>
+<label>Rate :  <%= @item.rate %> </label>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Destroy', @item, method: :delete %> |
+<%= link_to 'Back', items_path %>

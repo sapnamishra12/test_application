@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApplication</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= render "layouts/header" %>
+    <%= render "layouts/sidebar" %>
+    <%= yield %>
+    <br><br>
+    <%= render "layouts/footer" %>
+  </body>
+  <style type="text/css">
+  	tr,th,table,td {border: 1px solid #ddd !important}
+  </style>
+</html>
