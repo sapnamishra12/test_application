@@ -5,21 +5,24 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.4.2
+
+* Ruby version : 5.1.6
 
 * System dependencies
 
-* Configuration
+* Configuration : MySQL Database
 
-* Database creation
+* Database creation : test_application_development
 
-* Database initialization
+* Database initialization : localhost/ur48x
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the test suite : run command => bundle exec rspec
 
 * Deployment instructions
+install rails and ruby version
+bundle install
+create datbase using command rake db:create then execute command rake db:migrate
+visit home page with http://localhost:5002
+add data for different modules and test using "bundle exec rspec" command
 
-* ...
-# test_application
